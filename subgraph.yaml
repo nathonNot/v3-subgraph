@@ -9,11 +9,11 @@ features:
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: bitlayer
+    network: linea
     source:
-      address: '0xAd2449234455E0992e1423411df0f8B6FEd1FEAe'
+      address: '0x62A96568EDf30b37A2bC565a7e8aC457945A5aB2'
       abi: Factory
-      startBlock: 1370065
+      startBlock: 4685859
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -39,7 +39,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pool
-    network: bitlayer
+    network: linea
     source:
       abi: Pool
     mapping:
