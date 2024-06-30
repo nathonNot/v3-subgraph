@@ -34,7 +34,9 @@ export function handleInitializeHelper(
   // update token prices
   const token0 = Token.load(pool.token0)
   const token1 = Token.load(pool.token1)
-
+  if (token1 && token1.id == WETH_ADDRESS){
+    stablecoinIsToken0 = false;
+  }
   // update ETH price now that prices could have changed
   const bundle = Bundle.load('1')!
   bundle.ethPriceUSD = getEthPriceInUSD(stablecoinWrappedNativePoolAddress, stablecoinIsToken0)

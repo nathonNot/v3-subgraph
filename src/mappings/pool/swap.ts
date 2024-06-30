@@ -131,7 +131,9 @@ export function handleSwapHelper(
     pool.token0Price = prices[0]
     pool.token1Price = prices[1]
     pool.save()
-
+    if (token1 && token1.id == WETH_ADDRESS) {
+      stablecoinIsToken0 = false;
+    }
     // update USD pricing
     bundle.ethPriceUSD = getEthPriceInUSD(stablecoinWrappedNativePoolAddress, stablecoinIsToken0)
     bundle.save()
